@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "<h1>Welcome to Flatiron Cars</h1>"
+    return "Welcome to Flatiron Cars"
 
 
 @app.route("/<model>")
