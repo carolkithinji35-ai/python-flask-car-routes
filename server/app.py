@@ -1,9 +1,7 @@
 from flask import Flask
 existing_models = ['Beedle', 'Crossroads', 'M2', 'Panique']
 
-
 app = Flask(__name__)
-
 
 @app.route("/")
 def hello():
@@ -12,8 +10,7 @@ def hello():
 
 @app.route("/<model>")
 def models(model):
-    
-        # case-insensitive match against known models
+    # case-insensitive match against known models
     if any(model.lower() == m.lower() for m in existing_models):
         return f"Flatiron {model} is in our fleet!"
     else:
