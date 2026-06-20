@@ -12,7 +12,9 @@ def hello():
 
 @app.route("/<model>")
 def models(model):
-    if model in existing_models:
+    
+        # case-insensitive match against known models
+    if any(model.lower() == m.lower() for m in existing_models):
         return f"Flatiron {model} is in our fleet!"
     else:
         return f"No models called {model} exists in our catalog"
